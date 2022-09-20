@@ -7,7 +7,7 @@ public class App {
     public static void main(String[] args) throws Exception {
 
         // Le o arquivo
-        String texto = leArquivo("C:/Users/lpasq/PUCRS/2022 - 2º Semestre/Segurança de Sistemas/Trabalhos/T1/src/20201-teste2.txt");
+        String texto = leArquivo("C:/Users/lpasq/PUCRS/2022 - 2º Semestre/Segurança de Sistemas/Trabalhos/T1/src/20201-teste1.txt");
 
         //Calcula o tamanho da chave    
         int tamanhoChave = tamanhoChave(texto);
@@ -18,19 +18,19 @@ public class App {
         System.out.println("A chave é: "+chave);
 
         //Descriptografa com a chave
-        System.out.println(descript(texto, chave));
+        descript(texto, chave);
 
 
     }
     
-    private static String descript(String texto, String chave) {
+    private static void descript(String texto, String chave) {
+
+        System.out.println("Gerando texto claro, aguarde...");
         char letraCript;
         int posCript;
         char letraChave;
         int posChave;
-        char letraDescipt;
         int posDescript;
-        String descript = "";
         int i=0;
         while(i<texto.length()){
             for(int j=0;j<chave.length();j++){
@@ -44,13 +44,13 @@ public class App {
                 }else{
                     posDescript=26+posCript-posChave;
                 }
-                letraDescipt = letraCorrespondente(posDescript);
-                descript=descript+letraDescipt;
+                System.out.print(letraCorrespondente(posDescript));
+               
                 i++;
-                if(i>=texto.length()) break;
+               
             }
         }
-        return descript;
+        
     }
 
     public static String leArquivo(String path) throws IOException{
@@ -115,7 +115,7 @@ public class App {
 
 
     private static String getChave(int tamanhoChave, String texto){
-        
+       
         String[] textoQuebrado = quebraTexto(texto,tamanhoChave);
         String chave = "";
         for(int i=0;i<tamanhoChave;i++){
@@ -126,6 +126,7 @@ public class App {
     private static char caractereChave(String texto){
         int posChar=0;
         int [] maiores = letrasMaisFrequente(texto);
+       
         if(lingua =="Portugues"){
             if(maiores[1]-maiores[0] == 4 || maiores[0]-maiores[1] == 22){
                 posChar = maiores[0];
@@ -187,6 +188,7 @@ public class App {
     
 
     private static String[] quebraTexto(String texto, int tamanhoChave){
+        System.out.println("Quebrando texto... Aguarde...");
         String [] textoQuebrado = new String [tamanhoChave];
         int tamanhoTexto = texto.length();
         char c = texto.charAt(0);
@@ -199,6 +201,7 @@ public class App {
                 c= texto.charAt(aux);
             }
         }
+        System.out.println("Texto Quebrado");
         return textoQuebrado;
     }
     
