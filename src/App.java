@@ -44,10 +44,11 @@ public class App {
                 }else{
                     posDescript=26+posCript-posChave;
                 }
+                
                 System.out.print(letraCorrespondente(posDescript));
                
                 i++;
-               
+               if(i>=texto.length())break;
             }
         }
         
@@ -193,8 +194,14 @@ public class App {
         int tamanhoTexto = texto.length();
         char c = texto.charAt(0);
         int aux = 0;
+        int tamanhoTextoQuebrado;
 
-        while(aux<tamanhoTexto-tamanhoChave){
+        if(tamanhoTexto>15000){
+            tamanhoTextoQuebrado = 15000;
+        }else{
+            tamanhoTextoQuebrado = tamanhoTexto;
+        }
+        while(aux<(tamanhoTextoQuebrado-tamanhoChave)){
             for(int j=0;j<tamanhoChave;j++){
                 textoQuebrado[j] = textoQuebrado[j]+c;
                 aux++;
