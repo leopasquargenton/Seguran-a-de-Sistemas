@@ -7,7 +7,7 @@ public class App {
     public static void main(String[] args) throws Exception {
 
         // Le o arquivo
-        String texto = leArquivo("C:/Users/lpasq/PUCRS/2022 - 2º Semestre/Segurança de Sistemas/Trabalhos/T1/src/20201-teste1.txt");
+        String texto = leArquivo("C:/Users/lpasq/PUCRS/2022 - 2º Semestre/Segurança de Sistemas/Trabalhos/T1/src/20201-teste2.txt");
 
         //Calcula o tamanho da chave    
         int tamanhoChave = tamanhoChave(texto);
