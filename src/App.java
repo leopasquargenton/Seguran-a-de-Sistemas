@@ -11,19 +11,19 @@ public class App {
         System.out.println(" ");
    
 
-        // Le o arquivo
+        // Le o arquivo (Substitua o path para o seu diretório local)
         String texto = leArquivo("C:/Users/lpasq/PUCRS/2022 - 2º Semestre/Segurança de Sistemas/Trabalhos/T1/src/20201-teste2.txt");
 
         //Calcula o tamanho da chave    
         int tamanhoChave = tamanhoChave(texto);
         
-        
         // Identifica a chave
         String chave = getChave(tamanhoChave, texto);
         
-       
         //Descriptografa com a chave
         descript(texto, chave);
+
+        //Mensagens
         System.out.println("O texto está em:  "+lingua);
         System.out.println("A chave tem tamanho: "+tamanhoChave);
         System.out.println("A chave é: "+chave);
