@@ -5,6 +5,11 @@ import java.io.IOException;
 public class App {
     static String lingua;
     public static void main(String[] args) throws Exception {
+        System.out.println(" Cifra de Vigenere!!!");
+        System.out.println(" ");
+        System.out.println(" ");
+        System.out.println(" ");
+        new Thread();
 
         // Le o arquivo
         String texto = leArquivo("C:/Users/lpasq/PUCRS/2022 - 2º Semestre/Segurança de Sistemas/Trabalhos/T1/src/20201-teste2.txt");
@@ -12,11 +17,12 @@ public class App {
         //Calcula o tamanho da chave    
         int tamanhoChave = tamanhoChave(texto);
         System.out.println("A chave tem tamanho: "+tamanhoChave);
-
+        
+        Thread.sleep(2000);
         // Identifica a chave
         String chave = getChave(tamanhoChave, texto);
         System.out.println("A chave é: "+chave);
-
+        Thread.sleep(2000);
         //Descriptografa com a chave
         descript(texto, chave);
 
@@ -189,7 +195,7 @@ public class App {
     
 
     private static String[] quebraTexto(String texto, int tamanhoChave){
-        System.out.println("Quebrando texto... Aguarde...");
+        
         String [] textoQuebrado = new String [tamanhoChave];
         int tamanhoTexto = texto.length();
         char c = texto.charAt(0);
@@ -208,7 +214,7 @@ public class App {
                 c= texto.charAt(aux);
             }
         }
-        System.out.println("Texto Quebrado");
+        
         return textoQuebrado;
     }
     
