@@ -9,29 +9,29 @@ public class App {
         System.out.println(" ");
         System.out.println(" ");
         System.out.println(" ");
-        new Thread();
+   
 
         // Le o arquivo
         String texto = leArquivo("C:/Users/lpasq/PUCRS/2022 - 2º Semestre/Segurança de Sistemas/Trabalhos/T1/src/20201-teste2.txt");
 
         //Calcula o tamanho da chave    
         int tamanhoChave = tamanhoChave(texto);
-        System.out.println("A chave tem tamanho: "+tamanhoChave);
         
-        Thread.sleep(2000);
+        
         // Identifica a chave
         String chave = getChave(tamanhoChave, texto);
-        System.out.println("A chave é: "+chave);
-        Thread.sleep(2000);
+        
+       
         //Descriptografa com a chave
         descript(texto, chave);
-
-
+        System.out.println("O texto está em:  "+lingua);
+        System.out.println("A chave tem tamanho: "+tamanhoChave);
+        System.out.println("A chave é: "+chave);
     }
     
     private static void descript(String texto, String chave) {
 
-        System.out.println("Gerando texto claro, aguarde...");
+        
         char letraCript;
         int posCript;
         char letraChave;
@@ -90,7 +90,7 @@ public class App {
         }else{
             lingua = "Portugues";
         }
-        System.out.println("O texto está em:  "+lingua);
+       
         return tamanhoChave;
     }
         
